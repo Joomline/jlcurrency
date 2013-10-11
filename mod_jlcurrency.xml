@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7" method="upgrade">
+	<name>MOD_JLCURRENCY</name>
+	<creationDate>2012-05-29</creationDate>
+	<author>JoomLine</author>
+	<authorEmail>artem@joomline.ru</authorEmail>
+	<authorUrl>http://www.joomline.net</authorUrl>
+	<copyright>Copyright 2009-2012 JoomLine.net All rights reserved!</copyright>
+	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
+	<version>2.3</version>
+	<description>MOD_JLCURRENCYDESC</description>
+	<files>
+		<filename module="mod_jlcurrency">mod_jlcurrency.php</filename>
+		<filename>index.html</filename>
+        <folder>tmpl</folder>
+	</files>
+    <languages folder="language">
+        <language tag="ru-RU">ru-RU/ru-RU.mod_jlcurrency.ini</language>
+    </languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+		<field name="jlwidth" type="text" label="MOD_JLCURRENCY_WIDTH" default="200" />
+		<field name="cache" type="list" label="MOD_JLCURRENCY_CACHE" default="0">
+			<option value="1">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="timecache" type="text" label="MOD_JLCURRENCY_TIMECACHE" description="MOD_JLCURRENCY_TIMECACHE_DESC" default="5" />
+		<field name="AUD" type="list" label="MOD_JLCURRENCY_AUD" default="0">
+			<option value="AUD">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="AZN" type="list" label="MOD_JLCURRENCY_AZN" default="0">
+			<option value="AZN">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="GBP" type="list" label="MOD_JLCURRENCY_GBP" default="0">
+			<option value="GBP">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="AMD" type="list" label="MOD_JLCURRENCY_AMD" default="0">
+			<option value="AMD">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="BYR" type="list" label="MOD_JLCURRENCY_BYR" default="0">
+			<option value="BYR">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="BGN" type="list" label="MOD_JLCURRENCY_BGN" default="0">
+			<option value="BGN">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="BRL" type="list" label="MOD_JLCURRENCY_BRL" default="0">
+			<option value="BRL">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+   		<field name="HUF" type="list" label="MOD_JLCURRENCY_HUF" default="0">
+			<option value="HUF">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="DKK" type="list" label="MOD_JLCURRENCY_DKK" default="0">
+			<option value="DKK">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		<field name="USD" type="list" label="MOD_JLCURRENCY_USD" default="0">
+			<option value="USD">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="EUR" type="list" label="MOD_JLCURRENCY_EUR" default="0">
+			<option value="EUR">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="INR" type="list" label="MOD_JLCURRENCY_INR" default="0">
+			<option value="INR">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="KZT" type="list" label="MOD_JLCURRENCY_KZT" default="0">
+			<option value="KZT">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="CAD" type="list" label="MOD_JLCURRENCY_CAD" default="0">
+			<option value="CAD">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="KGS" type="list" label="MOD_JLCURRENCY_KGS" default="0">
+			<option value="KGS">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="CNY" type="list" label="MOD_JLCURRENCY_CNY" default="0">
+			<option value="CNY">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="LVL" type="list" label="MOD_JLCURRENCY_LVL" default="0">
+			<option value="LVL">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+    	<field name="LTL" type="list" label="MOD_JLCURRENCY_LTL" default="0">
+			<option value="LTL">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="MDL" type="list" label="MOD_JLCURRENCY_MDL" default="0">
+			<option value="MDL">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="NOK" type="list" label="MOD_JLCURRENCY_NOK" default="0">
+			<option value="NOK">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="PLN" type="list" label="MOD_JLCURRENCY_PLN" default="0">
+			<option value="PLN">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="RON" type="list" label="MOD_JLCURRENCY_RON" default="0">
+			<option value="RON">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="XDR" type="list" label="MOD_JLCURRENCY_XDR" default="0">
+			<option value="XDR">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>	
+    	<field name="SGD" type="list" label="MOD_JLCURRENCY_SGD" default="0">
+			<option value="SGD">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="TJS" type="list" label="MOD_JLCURRENCY_TJS" default="0">
+			<option value="TJS">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>      	       	
+    	<field name="TRY" type="list" label="MOD_JLCURRENCY_TRY" default="0">
+			<option value="TRY">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+	    <field name="TMT" type="list" label="MOD_JLCURRENCY_TMT" default="0">
+			<option value="TMT">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        	
+    		<field name="UZS" type="list" label="MOD_JLCURRENCY_UZS" default="0">
+			<option value="UZS">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        	
+    		<field name="UAH" type="list" label="MOD_JLCURRENCY_UAH" default="0">
+			<option value="UAH">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        	
+    		<field name="CZK" type="list" label="MOD_JLCURRENCY_CZK" default="0">
+			<option value="CZK">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        	
+    		<field name="SEK" type="list" label="MOD_JLCURRENCY_SEK" default="0">
+			<option value="SEK">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        	
+    		<field name="CHF" type="list" label="MOD_JLCURRENCY_CHF" default="0">
+			<option value="CHF">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        	
+    		<field name="ZAR" type="list" label="MOD_JLCURRENCY_ZAR" default="0">
+			<option value="ZAR">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="KRW" type="list" label="MOD_JLCURRENCY_KRW" default="0">
+			<option value="KRW">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+        <field name="JPY" type="list" label="MOD_JLCURRENCY_JPY" default="0">
+			<option value="JPY">MOD_JLCURRENCY_YES</option>
+			<option value="0">MOD_JLCURRENCY_NO</option>
+		</field>
+		
+		</fieldset>
+		</fields>
+	</config>
+</extension>
