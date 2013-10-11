@@ -9,7 +9,7 @@
 */
 ?>
 <style>
-.curContainer {overflow: auto;width: <?echo $params->get('jlwidth');?>px;}
+.curContainer {overflow: auto;width: <?php echo $params->get('jlwidth');?>px;}
 .curr {background: none repeat scroll 0 0 #FFFFFF;font: 0.8em "Times New Roman",Times,serif;}
 .indexes {margin: 0;padding: 0;position: relative;}
 .curContainer .curr .red {color: #FF0000;}
