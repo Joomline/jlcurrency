@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.7" method="upgrade">
+<extension type="module" version="2.5" method="upgrade">
 	<name>MOD_JLCURRENCY</name>
 	<creationDate>2012-05-29</creationDate>
 	<author>JoomLine</author>
-	<authorEmail>artem@joomline.ru</authorEmail>
+	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2009-2012 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
@@ -16,6 +16,9 @@
 	</files>
     <languages folder="language">
         <language tag="ru-RU">ru-RU/ru-RU.mod_jlcurrency.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_jlcurrency.sys.ini</language>
+		<language tag="en-EN">en-GB/en-GB.mod_jlcurrency.ini</language>
+		<language tag="en-EN">en-GB/en-GB.mod_jlcurrency.sys.ini</language>
     </languages>
 
 	<config>

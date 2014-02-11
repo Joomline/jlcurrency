@@ -54,4 +54,5 @@ $time_cache = $params->get('timecache')*60;
 $cache->setCaching( $enabled_cache );  
 if ($enabled_cache==1){$cache->setLifeTime($time_cache); }
 $data = $cache->call( 'getTodayCurrency',$vl) ;
-include(JPATH_BASE.'/modules/mod_jlcurrency/tmpl/default.php');
+
+require JModuleHelper::getLayoutPath('mod_jlcurrency', $params->get('layout', 'default'));
