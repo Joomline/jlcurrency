@@ -2,8 +2,8 @@
  /**
  * @package mod_jlcurrency
  * @author Zhukov Artem (artem@joomline.ru)
- * @version 1.1
- * @copyright (C) 2012 by JoomLine (http://www.joomline.net)
+ * @version 2.4
+ * @copyright (C) 2012-2014 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
 */
@@ -28,12 +28,13 @@ $vl[$params->get('BRL')]=$params->get('BRL');$vl[$params->get('BGN')]=$params->g
 $vl[$params->get('BYR')]=$params->get('BYR');$vl[$params->get('AMD')]=$params->get('AMD');
 $vl[$params->get('GBP')]=$params->get('GBP');$vl[$params->get('AZN')]=$params->get('AZN');
 $vl[$params->get('AUD')]=$params->get('AUD');
-
+ 
 if (!function_exists("getTodayCurrency")) {
-    function getTodayCurrency($vl) {
+    function getTodayCurrency($vl,$increase) {
       $xml = simplexml_load_file('http://cbr.ru/scripts/XML_daily.asp');
       foreach ($xml->xpath('/ValCurs') as $prod) {$date_now = str_replace("SimpleXMLElement Object ( [0] => ","",$prod['Date']);}
        $i=0;$valute= array();
+	   $increase = ($increase>0) ? 1+($increase/100) : 0;	   
       foreach ($xml->xpath('/ValCurs/Valute') as $producs) {
         if (array_key_exists(str_replace("SimpleXMLElement Object ( [0] => ","",$producs->CharCode), $vl)) {
 			$valute[$i]['Date'] = date("d.m",strtotime($date_now));
@@ -41,18 +42,22 @@ if (!function_exists("getTodayCurrency")) {
 			$valute[$i]['CharCode'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->CharCode);
 			$valute[$i]['Nominal'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Nominal);
 			$valute[$i]['Name'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Name);
-			$valute[$i]['Value'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Value);
+			if ($increase>0){				   
+				$valute[$i]['Value'] = str_replace(".",",",sprintf("%.4f",str_replace(",",".",str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Value))*$increase));
+			} else {
+				$valute[$i]['Value'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Value);
+			}
 			++$i;
 		}
         }
       return $valute;
     }
 }
-$cache = & JFactory::getCache('mod_jlcurrency');
+$cache = JFactory::getCache('mod_jlcurrency');
 $enabled_cache = $params->get('cache');
 $time_cache = $params->get('timecache')*60;
 $cache->setCaching( $enabled_cache );  
 if ($enabled_cache==1){$cache->setLifeTime($time_cache); }
-$data = $cache->call( 'getTodayCurrency',$vl) ;
+$data = $cache->call( 'getTodayCurrency',$vl,$params->get('increase')) ;
 
 require JModuleHelper::getLayoutPath('mod_jlcurrency', $params->get('layout', 'default'));

@@ -5,9 +5,9 @@
 	<author>JoomLine</author>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://www.joomline.net</authorUrl>
-	<copyright>Copyright 2009-2012 JoomLine.net All rights reserved!</copyright>
+	<copyright>Copyright 2009-2014 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>2.3</version>
+	<version>2.4</version>
 	<description>MOD_JLCURRENCYDESC</description>
 	<files>
 		<filename module="mod_jlcurrency">mod_jlcurrency.php</filename>
@@ -30,6 +30,7 @@
 			<option value="0">MOD_JLCURRENCY_NO</option>
 		</field>
 		<field name="timecache" type="text" label="MOD_JLCURRENCY_TIMECACHE" description="MOD_JLCURRENCY_TIMECACHE_DESC" default="5" />
+		<field name="increase" type="text" label="MOD_JLCURRENCY_PROCENT_PLUS" description="MOD_JLCURRENCY_PROCENT_PLUS_DESC" default="0" />
 		<field name="AUD" type="list" label="MOD_JLCURRENCY_AUD" default="0">
 			<option value="AUD">MOD_JLCURRENCY_YES</option>
 			<option value="0">MOD_JLCURRENCY_NO</option>
