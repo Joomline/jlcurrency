@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5" method="upgrade">
 	<name>MOD_JLCURRENCY</name>
-	<creationDate>2012-05-29</creationDate>
+	<creationDate>2016-11-10</creationDate>
 	<author>JoomLine</author>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2009-2014 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>2.4</version>
+	<version>2.5</version>
 	<description>MOD_JLCURRENCYDESC</description>
 	<files>
 		<filename module="mod_jlcurrency">mod_jlcurrency.php</filename>
@@ -181,4 +181,5 @@
 		</fieldset>
 		</fields>
 	</config>
+	<updateservers><server type="extension" priority="1" name="Joomline">http://joomline.net/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=14&amp;dummy=extension.xml</server></updateservers>
 </extension>
