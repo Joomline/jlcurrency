@@ -28,6 +28,7 @@ $vl[$params->get('BRL')]=$params->get('BRL');$vl[$params->get('BGN')]=$params->g
 $vl[$params->get('BYR')]=$params->get('BYR');$vl[$params->get('AMD')]=$params->get('AMD');
 $vl[$params->get('GBP')]=$params->get('GBP');$vl[$params->get('AZN')]=$params->get('AZN');
 $vl[$params->get('AUD')]=$params->get('AUD');
+
  
 if (!function_exists("getTodayCurrency")) {
     function getTodayCurrency($vl,$increase) {
@@ -36,16 +37,16 @@ if (!function_exists("getTodayCurrency")) {
        $i=0;$valute= array();
 	   $increase = ($increase>0) ? 1+($increase/100) : 0;	   
       foreach ($xml->xpath('/ValCurs/Valute') as $producs) {
-        if (array_key_exists(str_replace("SimpleXMLElement Object ( [0] => ","",$producs->CharCode), $vl)) {
+        if (array_key_exists((string)$producs->CharCode, $vl)) {
 			$valute[$i]['Date'] = date("d.m",strtotime($date_now));
-			$valute[$i]['NumCode'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->NumCode);
-			$valute[$i]['CharCode'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->CharCode);
-			$valute[$i]['Nominal'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Nominal);
-			$valute[$i]['Name'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Name);
+			$valute[$i]['NumCode'] = (string)$producs->NumCode;
+			$valute[$i]['CharCode'] = (string)$producs->CharCode; 
+			$valute[$i]['Nominal'] = (string)$producs->Nominal;
+			$valute[$i]['Name'] = (string)$producs->Name;  
 			if ($increase>0){				   
-				$valute[$i]['Value'] = str_replace(".",",",sprintf("%.4f",str_replace(",",".",str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Value))*$increase));
+				$valute[$i]['Value'] = sprintf("%.2f",str_replace(",",".",((string)$producs->Value))*$increase);
 			} else {
-				$valute[$i]['Value'] = str_replace("SimpleXMLElement Object ( [0] => ","",$producs->Value);
+				$valute[$i]['Value'] = sprintf("%.2f",str_replace(",",".",((string)$producs->Value)));  
 			}
 			++$i;
 		}
