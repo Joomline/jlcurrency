@@ -2,7 +2,7 @@
  /**
  * @package mod_jlcurrency
  * @author Zhukov Artem (artem@joomline.ru)
- * @version 1.1
+ * @version 2.5
  * @copyright (C) 2012 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
@@ -30,5 +30,5 @@
 <? } ?>
 </tr></table></div>
 <div style="text-align: right;">
-    <a href="http://joomline.ru/rasshirenija/moduli/jlcurrency.html" target="_blank" style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; ">Модуль курса валют</a>
+    <a href="http://joomline.net" target="_blank" style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; ">Joomline.net</a>
 </div>
