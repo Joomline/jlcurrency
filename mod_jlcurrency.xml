@@ -7,7 +7,7 @@
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2009-2014 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>2.5</version>
+	<version>2.5.0</version>
 	<description>MOD_JLCURRENCYDESC</description>
 	<files>
 		<filename module="mod_jlcurrency">mod_jlcurrency.php</filename>
